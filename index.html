@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Main Home Page</h1>
+    <p>Select a subpage:</p>
+    <div>
+        <select id="subpageSelect">
+            <option value="">-- Select a page --</option>
+            <script>
+                for (let i = 1; i <= 57; i++) {
+                    document.write('<option value="/Link/' + i + '.htm">Page ' + i + '</option>');
+                }
+            </script>
+        </select>
+        <button onclick="navigate()">Go</button>
+    </div>
+
+    <script>
+        function navigate() {
+            const select = document.getElementById('subpageSelect');
+            const value = select.value;
+            if (value) {
+                window.location.href = value;
+            }
+        }
+    </script>
+</body>
+</html>
